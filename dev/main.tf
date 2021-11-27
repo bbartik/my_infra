@@ -22,7 +22,7 @@ provider "aws" {
 }
 
 module "my_vpc1" {
-  source = "https://github.com/bbartik/my_infra.git//modules/vpc"
+  source = "git::https://github.com/bbartik/my_infra.git//modules/vpc"
 
   cidr_block = "10.51.0.0/16"
   number_of_subnets = "2"

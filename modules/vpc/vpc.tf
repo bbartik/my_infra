@@ -1,3 +1,7 @@
+data "aws_availability_zones" "this" {
+  state = "available"
+}
+
 resource "aws_vpc" "this" {
   cidr_block = var.cidr_block
 }
