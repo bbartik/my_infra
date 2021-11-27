@@ -59,8 +59,12 @@ data "aws_subnets" "public" {
   }
 }
 
-resource "aws_route_table_association" "public_rt_assoc" {
-    for_each = data.aws_subnets.public.id
-    subnet_id = each.value
-    route_table_id = aws_route_table.public.id
+output "aws_subnets" {
+  value = data.aws_subnets.public
 }
+
+#resource "aws_route_table_association" "public_rt_assoc" {
+#    for_each = data.aws_subnets.public
+#    subnet_id = each.value
+#    route_table_id = aws_route_table.public.id
+#}
