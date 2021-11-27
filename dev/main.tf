@@ -30,7 +30,7 @@ module "my_vpc1" {
 }
 
 data "aws_subnet_ids" "public" {
-  vpc_id = aws_vpc.this.id
+  vpc_id = module.my_vpc1.aws_vpc.this.id
 
   tags = {
     public = "true"
