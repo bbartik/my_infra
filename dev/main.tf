@@ -28,3 +28,14 @@ module "my_vpc1" {
   number_of_subnets = "2"
   base_tag = "BB-TF-Lab"
 }
+
+data "aws_subnets" "public" {
+  filter {
+    name   = "tag:public"
+    values = ["true"]
+  }
+}
+
+output "aws_subnets" {
+  value = data.aws_subnets.public
+}
