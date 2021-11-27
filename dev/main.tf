@@ -30,6 +30,7 @@ module "my_vpc1" {
 }
 
 data "aws_subnet_ids" "public" {
+  vpc_id = module.my_vpc1.vpc_id
 
   tags = {
     public = "true"
