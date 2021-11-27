@@ -58,7 +58,7 @@ resource "aws_route_table" "public" {
 }
 
 data "aws_subnet_ids" "public" {
-  vpc_id = var.vpc_id
+  vpc_id = aws_vpc.this.id
 
   tags = {
     public = "true"
