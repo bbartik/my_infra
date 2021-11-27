@@ -28,4 +28,3 @@ module "my_vpc1" {
   number_of_subnets = "2"
   base_tag = "BB-TF-Lab"
 }
-
