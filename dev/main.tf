@@ -28,3 +28,15 @@ module "my_vpc1" {
   number_of_subnets = "2"
   base_tag = "BB-TF-Lab"
 }
+
+data "aws_subnet_ids" "public" {
+  vpc_id = aws_vpc.this.id
+
+  tags = {
+    public = "true"
+  }
+}
+
+output "public_subnet_ids" {
+  value = data.aws_subnet_ids.public
+}
