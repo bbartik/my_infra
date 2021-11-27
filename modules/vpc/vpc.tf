@@ -32,7 +32,7 @@ resource "aws_subnet" "private" {
 }
 
 resource "aws_internet_gateway" "this" {
-  vpc_id = aws_vpc.vpc.id
+  vpc_id = aws_vpc.this.id
 
   tags = {
     Name = "${var.base_tag}-IGW"
