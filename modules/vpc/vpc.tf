@@ -57,10 +57,11 @@ resource "aws_route_table" "public" {
     }
 }
 
-data "aws_subnets" "public" {
-  filter {
-    name   = "tag:public"
-    values = ["true"]
+data "aws_subnet_ids" "public" {
+  vpc_id = var.vpc_id
+
+  tags = {
+    public = "true"
   }
 }
 
